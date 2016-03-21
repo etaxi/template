@@ -1,5 +1,5 @@
 <html>
-<head><title>ViralPatel.net - FreeMarker Hello World</title>
+<head><title>FreeMarker Hello World</title>
 
 <body>
 <form name="user" action="freemarker2" method="post">
