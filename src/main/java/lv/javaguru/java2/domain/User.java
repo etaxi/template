@@ -6,9 +6,24 @@ package lv.javaguru.java2.domain;
 public class User {
 
     private long userId;
-    private String firstName;
-    private String lastName;
+    public String firstName;
+    public String lastName;
 
+
+    public User() {
+    }
+
+    public User(String firstName, String lastName) {
+        this.userId = 0;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public User(long userId, String firstName, String lastName) {
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public long getUserId() {
         return userId;
@@ -32,5 +47,14 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }
