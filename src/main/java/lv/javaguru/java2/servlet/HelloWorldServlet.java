@@ -23,6 +23,10 @@ public class HelloWorldServlet extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		out.println("<h1>" + "Hello WWW world from Java!" + "</h1>");		
 		out.println("<h1>" + "Hello WWW world from Java!" + "</h1>");
+		out.println("<a href='http://localhost:8080/hello'>  /hello  </a> <br>");
+		out.println("<a href='http://localhost:8080/paramProcessing?param1=23'>paramPrecessing</a> <br>");
+		out.println("<a href='http://localhost:8080/session'>  /session  </a> <br>");
+		out.println("<a href='http://localhost:8080/jsp'>  /jsp  </a>");
 	}
 
 }
