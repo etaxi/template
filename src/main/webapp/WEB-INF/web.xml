@@ -134,4 +134,16 @@
         <url-pattern>/freemarker2</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>mySQLServlet</servlet-name>
+        <servlet-class>lv.javaguru.java2.servlet.MySQLServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>mySQLServlet</servlet-name>
+        <url-pattern>/mySQLServlet</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

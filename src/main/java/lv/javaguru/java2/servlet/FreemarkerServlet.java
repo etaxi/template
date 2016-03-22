@@ -1,5 +1,6 @@
 package lv.javaguru.java2.servlet;
 
+import lv.javaguru.java2.database.jdbc.MySQLtest;
 import lv.javaguru.java2.domain.User;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -51,6 +52,8 @@ public class FreemarkerServlet extends HttpServlet {
         request.setAttribute("users", userList);
 
         request.getRequestDispatcher("/freemarker.ftl").forward(request, response);
+
+
 
     }
 }

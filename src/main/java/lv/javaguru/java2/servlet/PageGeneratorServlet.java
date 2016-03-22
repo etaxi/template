@@ -16,16 +16,17 @@ import java.util.Map;
 public class PageGeneratorServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Map<String, Object> pageVariables = new HashMap<>();
-        pageVariables.put("table", "123");
-
-        response.getWriter().println(PageGenerator.instance().getPage("page.html", pageVariables));
-        response.setContentType("text/html;charset=utf-8");
-        response.setStatus(HttpServletResponse.SC_OK);
+//        Map<String, Object> pageVariables = new HashMap<>();
+//        pageVariables.put("table", "123");
+//
+//        response.getWriter().println(PageGenerator.instance().getPage("page.html", pageVariables));
+//        response.setContentType("text/html;charset=utf-8");
+//        response.setStatus(HttpServletResponse.SC_OK);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String, Object> pageVariables = new HashMap<>();
+
         pageVariables.put("table", "123");
 
         response.getWriter().println(PageGenerator.instance().getPage("page.html", pageVariables));
