@@ -1,7 +1,11 @@
 package lv.javaguru.java2.database.jdbc;
 
 //STEP 1. Import required packages
+import lv.javaguru.java2.domain.User;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MySQLtest {
 
@@ -18,9 +22,23 @@ public class MySQLtest {
     }
 
     public static StringBuilder getCustomersListToString() {
+            StringBuilder customersAllString = new StringBuilder();
+        List<User> userList = new ArrayList<User>();
+        userList = getCustomersListToList();
+        for (User user : userList) {
+            customersAllString.
+                    append(user.getFirstName())
+                    .append(user.getLastName())
+                    .append("/n");
+        }
+        return customersAllString;
+    }
+
+
+    public static List<User> getCustomersListToList() {
         Connection conn = null;
         Statement stmt = null;
-        StringBuilder customersAllString = new StringBuilder();
+        List<User> userList = new ArrayList<User>();
         try{
             //STEP 2: Register JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
@@ -33,25 +51,22 @@ public class MySQLtest {
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
             String sql;
-            sql = "SELECT name, phone FROM customers;";
+            sql = "SELECT Id, name, password FROM customers;";
             ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
             while(rs.next()){
                 //Retrieve by column name
 
-
-                customersAllString.
-                        append(rs.getString("name"))     //db type
-                        .append(rs.getString("phone") + "\n");
+                userList.add(new User(rs.getString("Id"), rs.getString("name"), rs.getString("password")));
 
                 //String name = rs.getString("name");
                 //String author = rs.getString("phone");
 
                 //Display values
 
-                //System.out.print("Name: " + name);
-                //System.out.println(", Author: " + author);
+                System.out.print("Name: " + rs.getString("name"));
+                System.out.println(", Password: " + rs.getString("password"));
             }
             //STEP 6: Clean-up environment
             rs.close();
@@ -78,6 +93,6 @@ public class MySQLtest {
             }//end finally try
         }//end try
         System.out.println("Goodbye!");
-        return customersAllString;
+        return userList;
     }//end main
 }//end FirstExample

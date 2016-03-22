@@ -5,7 +5,7 @@ package lv.javaguru.java2.domain;
  */
 public class User {
 
-    private long userId;
+    public String userId;
     public String firstName;
     public String lastName;
 
@@ -14,22 +14,22 @@ public class User {
     }
 
     public User(String firstName, String lastName) {
-        this.userId = 0;
+        this.userId = "0";
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public User(long userId, String firstName, String lastName) {
+    public User(String userId, String firstName, String lastName) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

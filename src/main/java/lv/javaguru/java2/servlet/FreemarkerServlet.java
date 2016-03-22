@@ -23,11 +23,11 @@ public class FreemarkerServlet extends HttpServlet {
 
     //Just prepare static data to display on screen
     static {
-        userList.add(new User(1, "Bill", "Gates"));
-        userList.add(new User(2, "Steve", "Jobs"));
-        userList.add(new User(3, "Larry", "Page"));
-        userList.add(new User(4, "Sergey", "Brin"));
-        userList.add(new User(5, "Larry", "Ellison"));
+        userList.add(new User("1", "Bill", "Gates"));
+        userList.add(new User("2", "Steve", "Jobs"));
+        userList.add(new User("3", "Larry", "Page"));
+        userList.add(new User("4", "Sergey", "Brin"));
+        userList.add(new User("5", "Larry", "Ellison"));
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

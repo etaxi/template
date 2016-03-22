@@ -33,7 +33,7 @@ public class UserDAOImpl extends DAOImpl implements UserDAO {
             preparedStatement.executeUpdate();
             ResultSet rs = preparedStatement.getGeneratedKeys();
             if (rs.next()){
-                user.setUserId(rs.getLong(1));
+                user.setUserId(rs.getString(1));
             }
         } catch (Throwable e) {
             System.out.println("Exception while execute UserDAOImpl.create()");
@@ -58,7 +58,7 @@ public class UserDAOImpl extends DAOImpl implements UserDAO {
             User user = null;
             if (resultSet.next()) {
                 user = new User();
-                user.setUserId(resultSet.getLong("UserID"));
+                user.setUserId(resultSet.getString("UserID"));
                 user.setFirstName(resultSet.getString("FirstName"));
                 user.setLastName(resultSet.getString("LastName"));
             }
@@ -82,7 +82,7 @@ public class UserDAOImpl extends DAOImpl implements UserDAO {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 User user = new User();
-                user.setUserId(resultSet.getLong("UserID"));
+                user.setUserId(resultSet.getString("UserID"));
                 user.setFirstName(resultSet.getString("FirstName"));
                 user.setLastName(resultSet.getString("LastName"));
                 users.add(user);
@@ -129,7 +129,7 @@ public class UserDAOImpl extends DAOImpl implements UserDAO {
                             "where UserID = ?");
             preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
-            preparedStatement.setLong(3, user.getUserId());
+            preparedStatement.setString(3, user.getUserId());
             preparedStatement.executeUpdate();
         } catch (Throwable e) {
             System.out.println("Exception while execute UserDAOImpl.update()");

@@ -18,7 +18,14 @@ package lv.javaguru.java2.servlet;
 
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-           request.setAttribute("table", MySQLtest.getCustomersListToString());
+           request.setAttribute("users", MySQLtest.getCustomersListToList() );
+           request.setAttribute("table", MySQLtest.getCustomersListToString() );
+//            try {
+//                Thread.sleep(10000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+            //request.setAttribute("users", MySQLtest.getCustomersListToString());
            request.getRequestDispatcher("/mysqlpage.ftl").forward(request, response);
 
         }

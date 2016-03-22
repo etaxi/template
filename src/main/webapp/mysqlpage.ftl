@@ -5,11 +5,21 @@
 
 <table class="datatable">
     <tr>
-        <th>Firstname</th>  <th>Lastname</th>
+        <th>Name</th>  <th>Password</th>
     </tr>
+    <#list users as user>
+        <tr>
+            <td>${user.firstName}</td> <td>${user.lastName}</td>
+        </tr>
+    </#list>
 
-${table}
+
+
+
 
 </table>
+
+    ${table}
+
 </body>
 </html>
