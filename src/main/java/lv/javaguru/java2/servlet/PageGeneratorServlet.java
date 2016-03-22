@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import lv.javaguru.java2.database.jdbc.MySQLtest;
 import lv.javaguru.java2.servlet.PageGenerator;
 
 /**
@@ -28,7 +30,7 @@ public class PageGeneratorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String, Object> pageVariables = new HashMap<>();
 
-        pageVariables.put("table", "123");
+        pageVariables.put("table", MySQLtest.getCustomersListToString());
 
         PageGenerator pageGenerator = new PageGenerator();
 
