@@ -27,7 +27,8 @@ public class PageGenerator {
     public String getPage(String filename, Map<String, Object> data) {
         Writer stream = new StringWriter();
         try {
-            Template template = cfg.getTemplate(HTML_DIR + File.separator + filename);
+            //Template template = cfg.getTemplate(HTML_DIR + File.separator + filename);
+            Template template = cfg.getTemplate(filename);
             template.process(data, stream);
         } catch (IOException | TemplateException e) {
             e.printStackTrace();
@@ -35,7 +36,12 @@ public class PageGenerator {
         return stream.toString();
     }
 
-    private PageGenerator() {
+    public PageGenerator() {
         cfg = new Configuration();
+        try {
+            cfg.setDirectoryForTemplateLoading(new File("C:/Java2Project/template/src/main/webapp"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

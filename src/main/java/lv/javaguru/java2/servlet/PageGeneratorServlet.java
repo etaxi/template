@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import lv.javaguru.java2.servlet.PageGenerator;
 
 /**
  * Created by Aleks on 22.03.2016.
@@ -29,7 +30,12 @@ public class PageGeneratorServlet extends HttpServlet {
 
         pageVariables.put("table", "123");
 
-        response.getWriter().println(PageGenerator.instance().getPage("page.html", pageVariables));
+        PageGenerator pageGenerator = new PageGenerator();
+
+        String page = pageGenerator.getPage("page.ftl", pageVariables);
+        System.out.print(page);
+
+        response.getWriter().println(page);
         response.setContentType("text/html;charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
     }

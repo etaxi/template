@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
 Testing freemarker <br>
- ${table}
+
+${table}
+
 </body>
 </html>
