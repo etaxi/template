@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">
+	<script src="ajax.js"></script>
+</head>
+
+<body>
+
+	<p>Какую страницу желаете открыть?</p>
+
+	<form>
+		<input onclick="showContent('./page1.html', 'contentBody')" type="button" value="Страница 1">
+		<input onclick="showContent('./page2.html', 'contentBody')" type="button" value="Страница 2">
+
+		<input onclick="showContent('./mySQLServlet', 'contentBody')" type="button" value="Данные из Базы">
+		<input onclick="showContent('x', 'contentBody')" type="button" value="Без страницы">
+
+		<br>
+		<a href='http://localhost:8080/hello'>  /hello  </a> <br>
+		<a href='http://localhost:8080/paramProcessing?param1=23'>  /paramPrecessing</a> <br>
+		<a href='http://localhost:8080/session'>  /session  </a> <br>
+		<a href='http://localhost:8080/jsp'>  /jsp  </a> <br>
+		<a href='http://localhost:8080/SimpleTest'>  /SimpleTest  </a> <br>
+		<a href='http://localhost:8080/first.jsp'>  /first.jsp  </a> <br>
+		<a href='http://localhost:8080/freemarker2'>  /freemarker2  </a> <br>
+		<a href='http://localhost:8080/PageGeneratorTest'>  /PageGeneratorTest  </a> <br>
+		<a href='http://localhost:8080/mySQLServlet'>  /mySQLServlet  </a> <br>
+	</form>
+
+	<div id="contentBody">
+	</div>
+
+</body>
+</html>

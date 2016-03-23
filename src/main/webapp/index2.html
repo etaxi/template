@@ -9,9 +9,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">
 <script>
-	function showContent(link) {
+	function showContent(link, content) {
 
-		var cont = document.getElementById('contentBody');
+		var cont = document.getElementById(content);
 		var loading = document.getElementById('loading');
 
 		cont.innerHTML = loading.innerHTML;
@@ -49,10 +49,11 @@
 	<p>Какую страницу желаете открыть?</p>
 
 	<form>
-		<input onclick="showContent('./page1.html')" type="button" value="Страница 1">
-		<input onclick="showContent('./page2.html')" type="button" value="Страница 2">
+		<input onclick="showContent('./page1.html', 'contentBody')" type="button" value="Страница 1">
+		<input onclick="showContent('./page2.html', 'contentBody')" type="button" value="Страница 2">
 
-		<input onclick="showContent('./mySQLServlet')" type="button" value="Данные из Базы">
+		<input onclick="showContent('./mySQLServlet', 'contentBody')" type="button" value="Данные из Базы">
+		<input onclick="showContent('', 'contentBody')" type="button" value="Без страницы">
 
 		<br>
 		<a href='http://localhost:8080/hello'>  /hello  </a> <br>
