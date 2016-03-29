@@ -27,6 +27,14 @@ public class MVCFilter implements Filter {
 
         String contextURL = req.getServletPath();
 
+//        if (contextURL.equals("/index")) {
+//            filterChain.doFilter();
+//        } else {
+//
+
+
+
+
         MVCController controller = urlToControllerMap.get(contextURL);
         MVCModel model = controller.processRequest(req);
 

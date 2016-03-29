@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<h1><%=request.getAttribute("data")%></h1>
+<h1><%=request.getAttribute("model")%></h1>
 
 </body>
 </html>
