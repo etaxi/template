@@ -9,7 +9,7 @@ public class BoulingGame {
         oneBack = 0;
         twoBack = 0;
         sum = 0;
-        frame = 1;
+        frame = 0;
         knock = 1;
     }
 
